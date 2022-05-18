@@ -11,18 +11,22 @@ export default function Calculadora() {
     setValor(newValue);
   }
 
-
   function cleanValor(newValue) {
     setValor("");
   }
+
+  function operacion(Operando) {
+    /* TODO: Implement operacion con string */
+  }
+
   return (
     <div className="cuerpo">
       <Pantalla valor={valor} />
       <div className="row1">
-        <Button valor={valor} fValor={actualizarValor} texto="+" textoStyle={{ color: "orange" }} />
-        <Button valor={valor} fValor={actualizarValor} texto="-" textoStyle={{ color: "orange" }} />
-        <Button valor={valor} fValor={actualizarValor} texto="/" textoStyle={{ color: "orange" }} />
-        <Button valor={valor} fValor={actualizarValor} texto="*" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={actualizarValor} texto="+" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={actualizarValor} texto="-" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={actualizarValor} texto="/" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={actualizarValor} texto="*" textoStyle={{ color: "orange" }} />
       </div>
       <div className="row1">
         <Button valor={valor} fValor={actualizarValor} texto="1" />
@@ -41,8 +45,8 @@ export default function Calculadora() {
       </div>
       <div className="row1">
         <Button valor={valor} fValor={actualizarValor} texto="0" />
-        <Button valor={valor} fValor={actualizarValor} texto="=" textoStyle={{ color: "orange" }} />
-        <Button valor={valor} fValor={cleanValor} texto="C" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={actualizarValor} texto="=" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} fValor={cleanValor} texto="C" textoStyle={{ color: "orange" }} />
       </div>
     </div>
   );

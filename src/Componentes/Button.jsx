@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from "react";
 import "./Button.css";
 
 export default function Button({
-  texto, style, textoStyle, valor, fValor,
+  texto, style, textoStyle, valor, fValor,fOp
 }) {
   const butttonClick = (e) => {
     let valorB = "";
@@ -11,8 +14,12 @@ export default function Button({
     } else if (e.target.className === "textoBoton") {
       valorB = e.target.innerText;
     }
-    const data = valor;
-    fValor(data + valorB);
+    if (["+", "-", "*", "/", "="].includes(valorB)) {
+      fOp(valorB);
+    } else {
+      const data = valor;
+      fValor(data + valorB);
+    }
   };
 
   return (
