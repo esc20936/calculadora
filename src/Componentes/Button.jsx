@@ -7,7 +7,7 @@ import "./Button.css";
 import PropTypes from "prop-types";
 
 export default function Button({
-  texto, style, textoStyle, valor, fValor, fOp, sRe,
+  texto, style, textoStyle, valor, fValor, fOp, sRe, idD,
 }) {
   const butttonClick = (e) => {
     let valorB = "";
@@ -25,7 +25,7 @@ export default function Button({
   };
 
   return (
-    <div className="CuerpoBoton" style={style} onClick={((e) => butttonClick(e))}>
+    <div className="CuerpoBoton" id={idD} style={style} data-testid={idD} onClick={((e) => butttonClick(e))}>
       <h1 className="textoBoton" style={textoStyle} onClick={() => null}>{ texto }</h1>
     </div>
   );
@@ -34,9 +34,10 @@ export default function Button({
 Button.propTypes = {
   style: PropTypes.object.isRequired,
   textoStyle: PropTypes.object.isRequired,
-  valor: PropTypes.string.isRequired,
+  valor: PropTypes.any.isRequired,
   fValor: PropTypes.func.isRequired,
   fOp: PropTypes.func.isRequired,
   sRe: PropTypes.bool.isRequired,
   texto: PropTypes.string.isRequired,
+  idD: PropTypes.string.isRequired,
 };

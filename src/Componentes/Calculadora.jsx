@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-no-bind */
 import React, { useState } from "react";
 import "./Calculadora.css";
-import Pantalla from "./Pantalla";
+import "./Pantalla.css";
 import Button from "./Button";
 
 let stack = ["", null, null];
@@ -48,32 +48,34 @@ export default function Calculadora() {
   }
 
   return (
-    <div className="cuerpo">
-      <Pantalla valor={valor} />
-      <div className="row1">
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="+" textoStyle={{ color: "orange" }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="-" textoStyle={{ color: "orange" }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="/" textoStyle={{ color: "orange" }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="*" textoStyle={{ color: "orange" }} style={{ }} />
+    <div className="cuerpo" id="cuerpo">
+      <div className="Pantalla" id="Pantalla">
+        <p data-testid="valor" className="valor" id="valor">{valor}</p>
       </div>
       <div className="row1">
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="1" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="2" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="3" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="+" idD="suma" textoStyle={{ color: "orange" }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="-" idD="resta" textoStyle={{ color: "orange" }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="/" idD="div" textoStyle={{ color: "orange" }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="*" idD="mult" textoStyle={{ color: "orange" }} style={{ }} />
       </div>
       <div className="row1">
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="4" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="5" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="6" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="1" idD="uno" className="uno" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="2" idD="dos" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="3" idD="tres" textoStyle={{ }} style={{ }} />
       </div>
       <div className="row1">
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="7" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="8" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="9" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="4" idD="cuatro" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="5" idD="cinco" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="6" idD="seis" textoStyle={{ }} style={{ }} />
       </div>
       <div className="row1">
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="0" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={cleanValor} style={{ width: "140px" }} texto="C" textoStyle={{ color: "orange" }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="7" idD="siete" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="8" idD="ocho" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="9" idD="nueve" textoStyle={{ }} style={{ }} />
+      </div>
+      <div className="row1">
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="0" idD="cero" textoStyle={{ }} style={{ }} />
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={cleanValor} style={{ width: "140px" }} idD="C" texto="C" textoStyle={{ color: "orange" }} />
       </div>
     </div>
   );
