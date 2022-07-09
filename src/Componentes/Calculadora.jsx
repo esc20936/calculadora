@@ -75,7 +75,9 @@ export default function Calculadora() {
       </div>
       <div className="row1">
         <Button valor={valor} fOp={operacion} sRe={sRes} fValor={actualizarValor} texto="0" idD="cero" textoStyle={{ }} style={{ }} />
-        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={cleanValor} style={{ width: "140px" }} idD="C" texto="C" textoStyle={{ color: "orange" }} />
+        {/* <Button valor={valor} fOp={operacion} sRe={sRes} fValor={cleanValor} style={{  }} idD="=" texto="=" textoStyle={{ color: "orange" }} /> */}
+
+        <Button valor={valor} fOp={operacion} sRe={sRes} fValor={cleanValor} style={{ /*width: "140px"*/ }} idD="C" texto="C" textoStyle={{ color: "orange" }} />
       </div>
     </div>
   );
